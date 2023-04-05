@@ -1,0 +1,58 @@
+.contactsList {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.phoneNumber {
+  margin-left: auto;
+  font-weight: 400;
+  color: #0d53e8;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  opacity: 0.8;
+}
+.contactName {
+  font-weight: 500;
+}
+.listItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 400px;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px;
+  gap: 15px;
+  background-color: rgb(248, 248, 248);
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
+}
+.listItem:hover{
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+    background-color: rgb(238, 238, 238);
+  }
+
+.listItem:not(:last-child) {
+  margin-bottom: 20px;
+}
+.telephone_icon {
+  display: flex;
+  flex-direction: row;
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  position: relative;
+  top: 2px;
+  opacity: 0.5;
+}
+.telephone_icon,.phoneNumber:hover {
+  opacity: 1;
+}
+
+
+.user_icon {
+  width: 30px;
+  height: 30px;
+}
