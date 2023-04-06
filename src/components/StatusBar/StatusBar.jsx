@@ -19,7 +19,7 @@ export const StatusBar = () => {
   const handleDeleteAllContacts = () => {
     dispatch(deleteAllContacts());
   };
-  
+
   const handleSortAzContacts = () => {
     if (sorted.sortedAlphabetically) {
       dispatch(sortContactsAzReverse());
@@ -64,8 +64,7 @@ export const StatusBar = () => {
             </button>
             <button
               className={css.button_sort}
-              type="button"
-              X
+              type="button"              
               title={sorted.sortedByDate ? 'Sort by date added reverse' : 'Sort by date added'}
               onClick={handleSortDateContacts}
             >
