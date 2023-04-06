@@ -12,14 +12,14 @@ import sortDateIcon from '../../images/sort-date.png'
 import { useState } from 'react';
 
 export const StatusBar = () => {
-   const [sorted, setSorted] = useState({ sortedAlphabetically: false, sortedByDate: false });
+  const [sorted, setSorted] = useState({ sortedAlphabetically: false, sortedByDate: false });
   const dispatch = useDispatch();
   const { total } = useSelector(selectContactsCount);
   
   // const handleDeleteAllContacts = () => {
   //   dispatch(deleteAllContacts());
   // };
- const handleSortAzContacts = () => {
+  const handleSortAzContacts = () => {
     if (sorted.sortedAlphabetically) {
       dispatch(sortContactsAzReverse());
       setSorted({ sortedAlphabetically: false, sortedByDate: false });
