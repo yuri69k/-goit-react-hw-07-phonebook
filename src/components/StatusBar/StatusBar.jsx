@@ -59,6 +59,7 @@ export const StatusBar = () => {
             </button>
             <button className={css.button_delete}
               type="button"
+              title='Delete All Contacts'
               onClick={handleDeleteAllContacts}>
               <img src={trashIcon} alt="trash icon" className={css.icon} />
             </button>
