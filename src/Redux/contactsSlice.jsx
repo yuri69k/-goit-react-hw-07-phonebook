@@ -14,6 +14,8 @@ const contactsSlice = createSlice({
   name: 'contacts',
   initialState: { items: initialState, isLoading: false, error: null },
   reducers: {
+   
+
     sortContactsAz: state => {
       state.items.sort((a, b) => {
         return a.name.localeCompare(b.name);
@@ -34,6 +36,9 @@ const contactsSlice = createSlice({
         return b.createdAt.localeCompare(a.createdAt);
       });
     },
+    deleteAllContacts: state => {
+      state.items.splice(0, state.items.length);
+    }
   },
   
 //    extraReducers: {
@@ -88,7 +93,7 @@ const contactsSlice = createSlice({
 });
 
 export const {
-  //  deleteAllContacts,
+   deleteAllContacts,
   sortContactsAz,
   sortContactsAzReverse,
   sortContactsByDate,

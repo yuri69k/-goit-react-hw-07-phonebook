@@ -1,13 +1,13 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { selectContactsCount} from 'Redux/selectors';
-import { sortContactsAz,
+import { sortContactsAz,deleteAllContacts,
   sortContactsAzReverse,
   sortContactsByDate,
   sortContactsByDateReverse } from '../../Redux/contactsSlice';
 import { Filter } from '../Filter/Filter';
 import css from './StatusBar.module.css';
 import sortIcon from '../../images/sort-az.png';
-// import trashIcon from '../../images/trash.png';
+import trashIcon from '../../images/trash.png';
 import sortDateIcon from '../../images/sort-date.png'
 import { useState } from 'react';
 
@@ -15,10 +15,11 @@ export const StatusBar = () => {
   const [sorted, setSorted] = useState({ sortedAlphabetically: false, sortedByDate: false });
   const dispatch = useDispatch();
   const { total } = useSelector(selectContactsCount);
+ 
+  const handleDeleteAllContacts = () => {
+    dispatch(deleteAllContacts());
+  };
   
-  // const handleDeleteAllContacts = () => {
-  //   dispatch(deleteAllContacts());
-  // };
   const handleSortAzContacts = () => {
     if (sorted.sortedAlphabetically) {
       dispatch(sortContactsAzReverse());
@@ -56,11 +57,11 @@ export const StatusBar = () => {
               onClick={handleSortAzContacts}>
               <img src={sortIcon} alt="sort icon" className={css.icon} />
             </button>
-            {/* <button className={css.button_delete}
+            <button className={css.button_delete}
               type="button"
               onClick={handleDeleteAllContacts}>
               <img src={trashIcon} alt="trash icon" className={css.icon} />
-            </button> */}
+            </button>
             <button
               className={css.button_sort}
               type="button"
